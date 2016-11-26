@@ -5,7 +5,10 @@
 <h2>@ViewData["Title"].</h2>
 <h3>@ViewData["Message"]</h3>
 
-
+<div class="row">
+    <div class="col-md-3" style="font: 1.3em bold italic;">Name of The Department</div>
+    <div class="col-md-5" style="font: 1.3em bold italic;">Description of The Department</div>
+</div><hr />
 @foreach (var item in Model.Departments) 
 {
     <div class="row">

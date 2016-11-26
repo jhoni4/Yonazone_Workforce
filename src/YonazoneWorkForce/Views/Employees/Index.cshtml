@@ -2,10 +2,14 @@
 
 <h2>@ViewData["Title"]</h2>
 <br>
+<hr />
+<div class="row">
+    <div class="col-md-3" style="font: 1.3em bold italic;">Name of The Employees</div>
+</div><hr />
 
 @foreach (var e in Model.Employees)
 {
     <div class="row">
-        <p class="col-lg-3">@Html.DisplayFor(modelItem => e.FirstName) @Html.DisplayFor(model => e.LastName)</p>
+        <p class="col-md-3">@Html.DisplayFor(modelItem => e.FirstName) @Html.DisplayFor(model => e.LastName)</p>
     </div>
 }
