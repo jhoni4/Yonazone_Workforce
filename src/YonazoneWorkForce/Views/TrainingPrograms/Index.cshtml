@@ -1,15 +1,17 @@
-﻿@{
-    ViewData["Title"] = "Trainig Program";
-}
-<h2>@ViewData["Title"].</h2>
-<h3>@ViewData["Message"]</h3>
+﻿@model YonazoneWorkForce.ViewModel.AllTrainingProgrameViewModel
 
-<p>Use this area to provide additional information.</p>
-<div class="col-md-3">
-    <h2>Application uses</h2>
-    <ul>
-        <li>Sample pages using ASP.NET Core MVC</li>
-        <li><a href="http://go.microsoft.com/fwlink/?LinkId=518004">Bower</a> for managing client-side libraries</li>
-        <li>Theming using <a href="http://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>
-    </ul>
+
+<h2>@ViewData["Title"]</h2>
+<br>
+
+ <h2>These are Training Programe Lists</h2>
+<div class="col-md-10">
+    <div class=" row glyphicon-arrow-right">
+        @foreach(var tp in Model.TrainingPrograms)
+        {
+            <div class="col-md-2">@Html.DisplayFor(modelItem => tp.Name)</div>
+            <div class="col-md-3">@Html.DisplayFor(modelItem => tp.Description)</div>
+            <div class="col-md-1">@Html.DisplayFor(modelItem => tp.MaxCapacity)</div>
+        }
+    </div>
 </div>
