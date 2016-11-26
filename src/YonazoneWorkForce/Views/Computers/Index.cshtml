@@ -1,0 +1,21 @@
+﻿@model YonazoneWorkForce.ViewModel.AllComputersViewModel
+@{
+    ViewData["Title"] = "All Computer";
+}
+<h2>@ViewData["Title"].</h2>
+
+<p>These are Lists of computers avilable.</p>
+
+@foreach(var comp in Model.Computers)
+{
+    <div class="row">
+        <div class="col-md-3">@Html.DisplayFor(modelItem => comp.Model)</div>
+        <div class="col-md-3">$@Html.DisplayFor(modelItem => comp.PurchasePrice)</div>
+    </div>
+}
+    <div class="row">
+        <img src="~/images/banner4.svg" alt="Microsoft Azure" class="img-responsive" />
+        <img src="~/images/banner4.svg" alt="Microsoft Azure" class="img-responsive" />
+    </div>
+   
+
