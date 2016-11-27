@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using YonazoneWorkForce.Data;
 using YonazoneWorkForce.Models;
 using YonazoneWorkForce.ViewModels;
+using YonazoneWorkForce.ViewModel;
 
 namespace YonazoneWorkForce.Controllers
 {
@@ -34,9 +35,9 @@ namespace YonazoneWorkForce.Controllers
 
         public IActionResult Create()
         {
-            ViewData["Message"] = "Your Employee Create page.";
+            CreateNewEmployeeViewModel model = new CreateNewEmployeeViewModel();
 
-            return View();
+            return View(model);
         }
 
         public IActionResult Error()

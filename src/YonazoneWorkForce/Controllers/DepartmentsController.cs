@@ -14,6 +14,7 @@ namespace YonazoneWorkForce.Controllers
     public class DepartmentsController : Controller
     {
         private WorkforceContext context;
+
         public DepartmentsController(WorkforceContext ctx)
         {
             context = ctx;
@@ -28,8 +29,8 @@ namespace YonazoneWorkForce.Controllers
 
         public IActionResult Create()
         {
-            ViewData["Message"] = "Your Department Create page.";
-            return View();
+            CreateNewDepartmentViewModel model = new CreateNewDepartmentViewModel();
+            return View(model);
         }
 
         public IActionResult Detail()

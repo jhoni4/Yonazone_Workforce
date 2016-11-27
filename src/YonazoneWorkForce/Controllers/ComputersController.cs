@@ -29,7 +29,8 @@ namespace YonazoneWorkForce.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            var model = new CreateNewComputerViewModel();
+            return View(model);
         }
 
         public IActionResult Error()

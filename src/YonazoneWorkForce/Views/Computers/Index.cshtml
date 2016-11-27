@@ -7,8 +7,8 @@
 <p>These are Lists of computers avilable.</p>
 <hr />
     <div class="row">
-        <div class="col-md-3" style="font: 1.3em bold italic;">Name of The Computer</div>
-        <div class="col-md-3" style="font: 1.3em bold italic;">PurchasePrice of The Computer</div>
+        <div class="col-md-3" style="font: 1.3em bold italic;">@Html.LabelFor(model => model.Computer.Model)</div>
+        <div class="col-md-3" style="font: 1.3em bold italic;">@Html.LabelFor(model => model.Computer.PurchasePrice)</div>
     </div><hr />
 @foreach (var comp in Model.Computers)
 {
@@ -17,6 +17,6 @@
         <div class="col-md-3">$@Html.DisplayFor(modelItem => comp.PurchasePrice)</div>
     </div>
 }
-        <img src="~/images/banner4.svg" alt="Microsoft Azure" class="img-responsive" />
-   
-
+<div>
+     <a asp-action="Create">Create New Computer</a>
+</div>

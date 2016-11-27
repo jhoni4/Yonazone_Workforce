@@ -7,7 +7,7 @@
  <h2>These are Training Programe Lists</h2><hr />
 <div class="row">
     <div class="col-md-3" style="font: 1.3em bold italic;">Name of The Program</div>
-    <div class="col-md-4" style="font: 1.3em bold italic;">Description of The Program</div>
+    <div class="col-md-4" style="font: 1.3em bold italic;">TrainingPrograms</div>
     <div class="col-md-3" style="font: 1.3em bold italic">MaxCapacity of The Program</div>
 </div><hr />
 
@@ -19,3 +19,6 @@
             <div class="col-md-3">@Html.DisplayFor(modelItem => tp.MaxCapacity)</div>
         }
     </div>
+<div>
+    <a asp-action="Create">Create New Training Program</a>
+</div>

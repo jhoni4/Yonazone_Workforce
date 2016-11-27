@@ -1,0 +1,35 @@
+﻿@model YonazoneWorkForce.ViewModel.CreateNewComputerViewModel
+@{
+    ViewData["Title"] = "Computer Create Form";
+}
+
+<h2>@ViewData["Title"]</h2>
+<br>
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="@Model.Computer.Model" class="col-md-2 control-label">Computer Brand Name</label>
+            <div class="col-md-10">
+                <input asp-for="@Model.Computer.Model" class="form-control" />
+                <span asp-validation-for="@Model.Computer.Model" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Computer.PurchasePrice" class="col-md-2 control-label">Purchase Price</label>
+            <div class="col-md-10">
+                <input asp-for="@Model.Computer.PurchasePrice" class="form-control" />
+                <span asp-validation-for="@Model.Computer.PurchasePrice" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create Computer" class="btn btn-info" />
+            </div>
+        </div>
+        <div>
+            <a asp-action="Index">Go Back </a>
+        </div>
+    </div>
+</form>
