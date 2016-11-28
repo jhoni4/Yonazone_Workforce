@@ -19,6 +19,6 @@ namespace YonazoneWorkForce.Models
 
         [Required]
         public int MaxCapacity { get; set; }
-
     }
 }
+

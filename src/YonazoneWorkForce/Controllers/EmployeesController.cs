@@ -4,9 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using YonazoneWorkForce.Data;
-using YonazoneWorkForce.Models;
 using YonazoneWorkForce.ViewModels;
-using YonazoneWorkForce.ViewModel;
+using YonazoneWorkForce.Models;
 
 namespace YonazoneWorkForce.Controllers
 {
@@ -33,11 +32,30 @@ namespace YonazoneWorkForce.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult Create()
         {
             CreateNewEmployeeViewModel model = new CreateNewEmployeeViewModel();
 
             return View(model);
+        }
+        [HttpPost]
+        public IActionResult Create(Employee Employee)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            context.Add(Employee);
+            try
+            {
+                context.SaveChanges();
+                return RedirectToAction("Index", Employee);
+            }
+            catch
+            {
+                throw;
+            }
         }
 
         public IActionResult Error()

@@ -15,7 +15,7 @@ namespace YonazoneWorkForce.Migrations
                     ComputerId = table.Column<int>(nullable: false)
                         .Annotation("Autoincrement", true),
                     EmployeeId = table.Column<int>(nullable: false),
-                    Model = table.Column<string>(nullable: true),
+                    Model = table.Column<string>(nullable: false),
                     PurchasePrice = table.Column<double>(nullable: false)
                 },
                 constraints: table =>
@@ -29,8 +29,8 @@ namespace YonazoneWorkForce.Migrations
                 {
                     DepartmentId = table.Column<int>(nullable: false)
                         .Annotation("Autoincrement", true),
-                    Description = table.Column<string>(nullable: true),
-                    Name = table.Column<string>(nullable: true)
+                    Description = table.Column<string>(nullable: false),
+                    Name = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -43,9 +43,9 @@ namespace YonazoneWorkForce.Migrations
                 {
                     TrainingProgramId = table.Column<int>(nullable: false)
                         .Annotation("Autoincrement", true),
-                    Description = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: false),
                     MaxCapacity = table.Column<int>(nullable: false),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {

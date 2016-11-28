@@ -10,9 +10,9 @@ namespace YonazoneWorkForce.Models
     {
         [Key]
         public int ComputerId { get; set; }
-
+        [Required]
         public string Model { get; set; }
-
+        [Required]
         public double PurchasePrice { get; set; }
 
         public int EmployeeId { get; set; }

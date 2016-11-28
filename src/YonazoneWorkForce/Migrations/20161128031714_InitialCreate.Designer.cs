@@ -8,7 +8,7 @@ using YonazoneWorkForce.Data;
 namespace YonazoneWorkForce.Migrations
 {
     [DbContext(typeof(WorkforceContext))]
-    [Migration("20161120021022_InitialCreate")]
+    [Migration("20161128031714_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,7 +23,8 @@ namespace YonazoneWorkForce.Migrations
 
                     b.Property<int>("EmployeeId");
 
-                    b.Property<string>("Model");
+                    b.Property<string>("Model")
+                        .IsRequired();
 
                     b.Property<double>("PurchasePrice");
 
@@ -37,9 +38,11 @@ namespace YonazoneWorkForce.Migrations
                     b.Property<int>("DepartmentId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .IsRequired();
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.HasKey("DepartmentId");
 
@@ -95,11 +98,13 @@ namespace YonazoneWorkForce.Migrations
                     b.Property<int>("TrainingProgramId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .IsRequired();
 
                     b.Property<int>("MaxCapacity");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.HasKey("TrainingProgramId");
 

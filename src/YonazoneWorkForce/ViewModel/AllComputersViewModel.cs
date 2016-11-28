@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using YonazoneWorkForce.Models;
+using YonazoneWorkForce.ViewModels;
 
-namespace YonazoneWorkForce.ViewModel
+namespace YonazoneWorkForce.ViewModels
 {
     public class AllComputersViewModel : BaseViewModel
     {
@@ -15,5 +16,7 @@ namespace YonazoneWorkForce.ViewModel
         public List<Employee> Employees { get; set; }
 
         public AllComputersViewModel() { }
+
     }
 }
+

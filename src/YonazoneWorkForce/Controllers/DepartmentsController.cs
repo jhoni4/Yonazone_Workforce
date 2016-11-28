@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using YonazoneWorkForce.ViewModel;
+using YonazoneWorkForce.ViewModels;
 using YonazoneWorkForce.Data;
 using Microsoft.EntityFrameworkCore;
+using YonazoneWorkForce.Models;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -26,11 +27,29 @@ namespace YonazoneWorkForce.Controllers
             model.Departments = await context.Department.ToListAsync();
             return View(model);
         }
-
+        [HttpGet]
         public IActionResult Create()
         {
             CreateNewDepartmentViewModel model = new CreateNewDepartmentViewModel();
             return View(model);
+        }
+        [HttpPost]
+        public IActionResult Create(Department Department)
+        {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            context.Add(Department);
+            try
+            {
+                context.SaveChanges();
+                return RedirectToAction("Index", Department);
+            }
+            catch
+            {
+                throw;
+            }
         }
 
         public IActionResult Detail()

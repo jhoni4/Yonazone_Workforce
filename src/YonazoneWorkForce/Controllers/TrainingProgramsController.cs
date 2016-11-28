@@ -4,7 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using YonazoneWorkForce.Data;
-using YonazoneWorkForce.ViewModel;
+using YonazoneWorkForce.ViewModels;
+using Microsoft.EntityFrameworkCore;
+using YonazoneWorkForce.Models;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -28,10 +30,30 @@ namespace YonazoneWorkForce.Controllers
             return View(model);
         }
 
+        [HttpGet]
         public IActionResult Create()
         {
-            ViewData["Message"] = "Ypur Taining Programe Create Page.";
-            return View();
+            var model = new CreateNewTrainingProgramViewModel();
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Create(Employee TrainingProgram)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            context.Add(TrainingProgram);
+            try
+            {
+                context.SaveChanges();
+                return RedirectToAction("Index", TrainingProgram);
+            }
+            catch
+            {
+                throw;
+            }
         }
 
         public IActionResult Detail()
